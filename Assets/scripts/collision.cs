@@ -23,4 +23,20 @@ public class collision : MonoBehaviour
         yPosition = yPosition + ySpeed * Time.deltaTime;
         transform.position = new Vector3(xPosition, yPosition, 0f);
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        Debug.Log("Ow!");
+        if (collision.gameObject.CompareTag("horizontalWall")) 
+        {
+            Debug.Log("my head/feet :(");
+            ySpeed = ySpeed * -1f;
+        } 
+        
+        else if (collision.gameObject.CompareTag("verticalWall"))
+        {
+            Debug.Log("my butt/crotch :(");
+            xSpeed = xSpeed * -1f;
+        }
+    }
 }
