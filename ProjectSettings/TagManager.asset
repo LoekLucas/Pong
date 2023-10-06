@@ -6,6 +6,9 @@ TagManager:
   tags:
   - horizontalWall
   - verticalWall
+  - tpTrigger
+  - tpTriggerRight
+  - tpTriggerLeft
   layers:
   - Default
   - TransparentFX
