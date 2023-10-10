@@ -9,8 +9,8 @@ public class collision : MonoBehaviour
     public float yPosition = 2f;
     public float xSpeed = 1f;
     public float ySpeed = 1f;
-    public float scoreRight = 0f;
-    public float scoreLeft = 0f;
+    public int scoreRight = 0;
+    public int scoreLeft = 0;
     public float timesHit = 0f;
 
     // Start is called before the first frame update

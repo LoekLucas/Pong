@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -24,14 +25,15 @@ public class counter : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (counter.gameObject.CompareTag("scoreLeftDisplayTag")) 
+        if (gameObject.CompareTag("scoreLeftDisplayTag")) 
         {
-            scoreLeftDisplay = collision.scoreLeft;
+            ;
+            scoreLeftDisplay = collision.scoreLeft.ToString();
         }
 
-        else if (counter.gameObject.CompareTag("scoreRightDisplayTag"))
+        else if (gameObject.CompareTag("scoreRightDisplayTag"))
         {
-            scoreLeftDisplay = collision.scoreLeft;
+            scoreLeftDisplay = collision.scoreLeft.ToString();
         }
     }
   
