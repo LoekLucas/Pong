@@ -2,16 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering;
+using TMPro;
 
 public class collision : MonoBehaviour
 {
-    public float xPosition = 2f;
-    public float yPosition = 2f;
-    public float xSpeed = 1f;
-    public float ySpeed = 1f;
+    public float xPosition = 0f;
+    public float yPosition = 0f;
+    public float xSpeed = 2f;
+    public float ySpeed = 2f;
     public int scoreRight = 0;
     public int scoreLeft = 0;
-    public float timesHit = 0f;
+    public TMP_Text scoreTextRight;
+    public TMP_Text scoreTextLeft;
+    public float winCondition = 10f;
 
     // Start is called before the first frame update
     void Start()
@@ -26,6 +29,7 @@ public class collision : MonoBehaviour
         xPosition = xPosition + xSpeed * Time.deltaTime;
         yPosition = yPosition + ySpeed * Time.deltaTime;
         transform.position = new Vector3(xPosition, yPosition, 0f);
+        
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -41,9 +45,10 @@ public class collision : MonoBehaviour
         {
             xPosition = 0f;
             yPosition = 0f;
-
-            timesHit = timesHit + 1;
             scoreRight = scoreRight + 1;
+            xSpeed = 2f;
+            ySpeed = 2f;
+
             Debug.Log("Left scored!");
         }
 
@@ -51,15 +56,17 @@ public class collision : MonoBehaviour
         {
             xPosition = 0f;
             yPosition = 0f;
-
-            timesHit = timesHit + 1;
             scoreLeft = scoreLeft + 1;
+            xSpeed = 2f;
+            ySpeed = 2f;
+
             Debug.Log("Right scored!");
         }
 
         else if (collision.gameObject.CompareTag("verticalWall"))
         {
-            xSpeed = xSpeed * -1f;
+            xSpeed = xSpeed * -1.1f;
+            ySpeed = ySpeed * 1.1f;
 
         }
 
