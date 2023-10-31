@@ -10,17 +10,15 @@ public class collision : MonoBehaviour
     public float yPosition = 0f;
     public float xSpeed = 2f;
     public float ySpeed = 2f;
-    public int scoreRight = 0;
-    public int scoreLeft = 0;
-    public TMP_Text scoreTextRight;
-    public TMP_Text scoreTextLeft;
-    public float winCondition = 10f;
+    public TMP_Text scoreText;
+    public int leftScore = 0;
+    public int rightScore = 0;
+    public int winScore = 10;
 
     // Start is called before the first frame update
     void Start()
     {
         transform.position = new Vector3(2f, 2f, 0f);
-
     }
 
     // Update is called once per frame
@@ -29,7 +27,18 @@ public class collision : MonoBehaviour
         xPosition = xPosition + xSpeed * Time.deltaTime;
         yPosition = yPosition + ySpeed * Time.deltaTime;
         transform.position = new Vector3(xPosition, yPosition, 0f);
-        
+        if (leftScore >= winScore)
+        {
+            scoreText.text = "Left player has won!";
+            xPosition = 0f;
+            yPosition = 0f;
+        }
+        else if (rightScore >= winScore)
+        {
+            scoreText.text = "Right player has won!";
+            xPosition = 0f;
+            yPosition = 0f;
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -45,10 +54,11 @@ public class collision : MonoBehaviour
         {
             xPosition = 0f;
             yPosition = 0f;
-            scoreRight = scoreRight + 1;
+            rightScore = rightScore + 1;
             xSpeed = 2f;
             ySpeed = 2f;
 
+            scoreText.text = leftScore + " - " + rightScore;
             Debug.Log("Left scored!");
         }
 
@@ -56,10 +66,11 @@ public class collision : MonoBehaviour
         {
             xPosition = 0f;
             yPosition = 0f;
-            scoreLeft = scoreLeft + 1;
+            leftScore = leftScore + 1;
             xSpeed = 2f;
             ySpeed = 2f;
 
+            scoreText.text = leftScore + " - " + rightScore;
             Debug.Log("Right scored!");
         }
 
@@ -69,8 +80,5 @@ public class collision : MonoBehaviour
             ySpeed = ySpeed * 1.1f;
 
         }
-
-        
-
     }
 }

@@ -1,21 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor;
 using UnityEngine;
 
-public class paddle : MonoBehaviour
+public class paddlle : MonoBehaviour
 {
-    public float speed = 7f;
+    public float speed = 3f;
     public string leftOrRight;
-    public float maxYValue = 4f;
+    public float maxValue = 3.8f;
 
-    void paddleControl(KeyCode up,KeyCode down)
+    void paddleControl(KeyCode up, KeyCode down)
     {
-        if (Input.GetKey(up) && transform.position.y < maxYValue)
+        if (Input.GetKey(up) && transform.position.y < maxValue)
         {
             transform.Translate(Vector3.up * speed * Time.deltaTime);
+
         }
-        else if (Input.GetKey(down) && transform.position.y > -maxYValue)
+        else if (Input.GetKey(down) && transform.position.y > -maxValue)
         {
             transform.Translate(Vector3.down * speed * Time.deltaTime);
         }
@@ -32,5 +32,6 @@ public class paddle : MonoBehaviour
         {
             paddleControl(KeyCode.UpArrow, KeyCode.DownArrow);
         }
+
     }
 }
