@@ -11,6 +11,7 @@ TagManager:
   - tpTriggerLeft
   - scoreLeftDisplayTag
   - scoreRightDisplayTag
+  - scoreText
   layers:
   - Default
   - TransparentFX
