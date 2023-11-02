@@ -4,33 +4,34 @@ using UnityEngine;
 
 public class paddlle : MonoBehaviour
 {
+    // Variables
     public float speed = 3f;
     public string leftOrRight;
     public float maxValue = 4f;
 
-    void paddleControl(KeyCode up, KeyCode down)
+
+    void paddleControl(KeyCode up, KeyCode down) // Makes a keycode for up and down which you can assign keys too
     {
-        if (Input.GetKey(up) && transform.position.y < maxValue)
+        if (Input.GetKey(up) && transform.position.y < maxValue) // "If up key pressed and position you're trying to go to is less than maxValue"
         {
-            transform.Translate(Vector3.up * speed * Time.deltaTime);
+            transform.Translate(Vector3.up * speed * Time.deltaTime); // "Go up by the value of speed"
 
         }
-        else if (Input.GetKey(down) && transform.position.y > -maxValue)
+        else if (Input.GetKey(down) && transform.position.y > -maxValue) // "If down key is pressed and position you're trying to go to is more than -maxValue"
         {
-            transform.Translate(Vector3.down * speed * Time.deltaTime);
+            transform.Translate(Vector3.down * speed * Time.deltaTime); // "Go down by the value of speed"
         }
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (leftOrRight == "left")
         {
-            paddleControl(KeyCode.W, KeyCode.S);
+            paddleControl(KeyCode.W, KeyCode.S); // Sets keycode up/down to W/S
         }
         else if (leftOrRight == "right")
         {
-            paddleControl(KeyCode.UpArrow, KeyCode.DownArrow);
+            paddleControl(KeyCode.UpArrow, KeyCode.DownArrow); // Sets keycode up/down to up arrow/down arrow
         }
 
     }

@@ -5,22 +5,12 @@ using UnityEngine.SceneManagement;
 
 public class levelManager : MonoBehaviour
 {
+    // Variables
     public string sceneName;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     public void changescene()
     {
-        SceneManager.LoadScene(sceneName);
+        SceneManager.LoadScene(sceneName); // If name of a scene is put as value of "sceneName" string it can be used to load that scene on button press
     }
 }
