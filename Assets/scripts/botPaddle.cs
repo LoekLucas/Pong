@@ -5,7 +5,6 @@ using UnityEngine.UIElements;
 
 public class botPaddle : MonoBehaviour
 {
-    // Variables
     public float yPosition = 0f;
     public float ySpeed = 5f;
     public GameObject ball; // Asking for a game object that this code will be able to interact with
