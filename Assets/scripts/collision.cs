@@ -54,9 +54,9 @@ public class collision : MonoBehaviour
         {
             xPosition = 0f;
             yPosition = 0f;
-            rightScore = rightScore + 1;
-            xSpeed = 2f;
-            ySpeed = 2f;
+            leftScore = leftScore + 1;
+            xSpeed = 3f;
+            ySpeed = 3f;
 
             scoreText.text = leftScore + " - " + rightScore;
             Debug.Log("Left scored!");
@@ -66,9 +66,9 @@ public class collision : MonoBehaviour
         {
             xPosition = 0f;
             yPosition = 0f;
-            leftScore = leftScore + 1;
-            xSpeed = 2f;
-            ySpeed = 2f;
+            rightScore = rightScore + 1;
+            xSpeed = 3f;
+            ySpeed = 3f;
 
             scoreText.text = leftScore + " - " + rightScore;
             Debug.Log("Right scored!");

@@ -12,6 +12,7 @@ TagManager:
   - scoreLeftDisplayTag
   - scoreRightDisplayTag
   - scoreText
+  - ball
   layers:
   - Default
   - TransparentFX
